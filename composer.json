@@ -1,0 +1,33 @@
+{
+    "name": "koksosk/base32hex",
+    "type": "library",
+    "description": "Base32Hex encoder/decoder",
+    "keywords": ["base32hex", "encoder", "decoder"],
+    "homepage": "https://github.com/koksosk/base32hex",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomas Chvostek",
+            "email": "kokso@vinnemusky.sk",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/koksosk/base32hex/issues",
+        "source": "https://github.com/koksosk/base32hex"
+    },
+    "autoload": {
+        "classmap": ["src"]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "raveren/kint": "0.9.1",
+        "phpunit/phpunit":           ">=3.7",
+        "phpmd/phpmd":               "1.4.*",
+        "squizlabs/php_codesniffer": "1.4.*",
+        "satooshi/php-coveralls":    "dev-master"
+    }
+}

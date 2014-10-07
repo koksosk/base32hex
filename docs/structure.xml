@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="Koksosk\Base32Hex" version="2.7.0">
+  <partials/>
+  <file path="Base32Hex.php" generated-path="Base32Hex.html" hash="a22ce873264d5e83f67e8439418a4549" package="Default">
+    <docblock line="0">
+      <description>This file is part of the Util package.</description>
+      <long-description>(c) 2014 Tomas Chvostek &lt;kokso@vinnemusky.sk&gt;
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Koksosk" line="23" package="Utils">
+      <extends/>
+      <name>Base32Hex</name>
+      <full_name>\Koksosk\Base32Hex</full_name>
+      <docblock line="23">
+        <description>Base32Hex class - encodes and decodes string to/from Base32hex</description>
+        <long-description>Last update: 2014-10-07
+
+RFC 2938 compliant</long-description>
+        <tag name="link" line="23" description="http://tools.ietf.org/rfc/rfc2938" link="http://tools.ietf.org/rfc/rfc2938"/>
+        <tag name="author" line="23" description="Tomas Chvostek"/>
+        <tag name="package" line="23" description="Utils"/>
+      </docblock>
+      <property static="true" visibility="protected" namespace="Koksosk" line="30" package="Utils">
+        <name>$BASE32HEX_BITS</name>
+        <full_name>\Koksosk\Base32Hex::BASE32HEX_BITS</full_name>
+        <default>5</default>
+        <docblock line="30">
+          <description>Number of bits stored in base32hex alphabet values</description>
+          <long-description></long-description>
+          <tag name="var" line="30" description="" type="integer" variable="">
+            <type>integer</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="true" visibility="protected" namespace="Koksosk" line="37" package="Utils">
+        <name>$BASE32HEX_ALPHABET</name>
+        <full_name>\Koksosk\Base32Hex::BASE32HEX_ALPHABET</full_name>
+        <default>array("0" =&gt; "00000", "1" =&gt; "00001", "2" =&gt; "00010", "3" =&gt; "00011", "4" =&gt; "00100", "5" =&gt; "00101", "6" =&gt; "00110", "7" =&gt; "00111", "8" =&gt; "01000", "9" =&gt; "01001", "A" =&gt; "01010", "B" =&gt; "01011", "C" =&gt; "01100", "D" =&gt; "01101", "E" =&gt; "01110", "F" =&gt; "01111", "G" =&gt; "10000", "H" =&gt; "10001", "I" =&gt; "10010", "J" =&gt; "10011", "K" =&gt; "10100", "L" =&gt; "10101", "M" =&gt; "10110", "N" =&gt; "10111", "O" =&gt; "11000", "P" =&gt; "11001", "Q" =&gt; "11010", "R" =&gt; "11011", "S" =&gt; "11100", "T" =&gt; "11101", "U" =&gt; "11110", "V" =&gt; "11111")</default>
+        <docblock line="37">
+          <description>Base32hex lookup alphabet [wiki link](http://en.wikipedia.org/wiki/Base32#base32hex)</description>
+          <long-description></long-description>
+          <tag name="var" line="37" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Koksosk" line="81" package="Utils">
+        <name>stringToBinary</name>
+        <full_name>\Koksosk\Base32Hex::stringToBinary()</full_name>
+        <docblock line="81">
+          <description>Returns binary string representation for string</description>
+          <long-description>Example: Base32Hex::stringToBinary("Hello") will return "0100100001100101011011000110110001101111"</long-description>
+          <tag name="param" line="81" description="" type="string" variable="$inputString">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="81" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$inputString</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Koksosk" line="97" package="Utils">
+        <name>binaryToString</name>
+        <full_name>\Koksosk\Base32Hex::binaryToString()</full_name>
+        <docblock line="97">
+          <description>Returns string representation from binary string</description>
+          <long-description>Example: Base32Hex::binaryToString("0100100001100101011011000110110001101111") will return "Hello"</long-description>
+          <tag name="param" line="97" description="" type="string" variable="$inputString">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="97" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$inputString</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Koksosk" line="113" package="Utils">
+        <name>encode</name>
+        <full_name>\Koksosk\Base32Hex::encode()</full_name>
+        <docblock line="113">
+          <description>Encode string into base32hex string</description>
+          <long-description>Example: Base32Hex::encode("Hello") will return "91IMOR3F"</long-description>
+          <tag name="param" line="113" description="" type="string" variable="$inputString">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="113" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$inputString</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Koksosk" line="137" package="Utils">
+        <name>decode</name>
+        <full_name>\Koksosk\Base32Hex::decode()</full_name>
+        <docblock line="137">
+          <description>Decode base32hex string to string</description>
+          <long-description>Example: Base32Hex::decode("91IMOR3F") will return "Hello"</long-description>
+          <tag name="param" line="137" description="" type="string" variable="$inputString">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="137" description="" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$inputString</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+    </class>
+    <markers/>
+    <source>eJzFVm1T20YQ/u5fsXXdQWaMXyA0QEIKBhNoCKHY6XQmk2HO8glpJOs0dyeDm+G/d+90knzCdp0PTTXDyDza3Xv29fbtb4mf1Drb2zXYhpEfCPCCiAK+E8IlMA+kT+GzDCIE3JA80DZKKmHHbcJut/cKRmxKBJz5MyYkDeFtyELBTmZBHNNpKsJ5W4TvjM4F49qel0YRuCyZ8+DBl0DiCUSBS2OBJ8ce41MiAxa3IIkoQWwW0Eetd311NrgZDpQpTVP6RMIjnj4JhOTBOJV0Ao+B9PELuiBYyl2KB000604tJlMq0A8KHxRJEb6p5b738aC93Uv6BG5EhIAdoLFSFJrdhGa/1SnxA0jW8TibGiWfPhn/romQkCYTIumRDs5Or7vTfW2+3l2cwe7h3gESmiZRQGKp0JMoiEPwpUyOOh3JWCTaAZVem/GHDvdc9aeUjI0Tkkofo2gHXX8x+dHJEtrdzJPCs9q3GuCjHVbPNtyk0zHlKsvjQCrvGMcABjGMc8eARIlPxlTCjEQpFUYzN3AyIxzlpfm/o98JZ5K6KhVCYiJdaPRPhwOkMPjrvn81GsIx7GPgK1yKWELEWJgm5clfHoMwABWmr46JE43bCkzoJCA6Uuq/Tmbi54J8cxlbwjmZb8z39Pr28rQ/GCFnrehkmvjUu3U4focv9dRbJd4r8d4ivlvgPUt+r8Qt+Vc53rPt75e4Jf9rgdv2X5e4JX9g8F6F/2GJW/KnBW7b75e4JX+W4xX+5yVuyQ8K3LZ/UeKW/PsM71Xjf1nilvxVgdv2fy9xS/5Djlf4X5e4Jf+xwG37NyVuyX8yeDX+tyVuyf9R4Lb9uxK35Ic5XuE/KnFL/nOB2/b/LPFcvvmyfe+oTHkscJDEhM/zQclpwqmgsdQDHXC0my+Vzhw8ERyJODSLYXV0lAmOWF9bdOqXNIpYvYnzHS8Pro8zVapbTf/QwdcRtd5IvDoK8Hoj05xmI4iTVA6XMTsxJ1m0zdxIx3hr5UPDS2NXO1nhvWg7G0jfitga2wH6jteLs7XVyqbM/ZQkTmHQabg+4c0FvQVdPO0+IRMHbygMvcP4xIg3W3DQgq0u2hyO7u5vT8/vrwcXI0xdbuG5pbUF3kXSptk0Us8r07wiv+pStCpggzxn8iOWne1sntJKKWT18ePyXOH9H+fZ9bmDJ2Ka8/xukEgsgTW5HOgFJ48N3uJs4d7fOH3ZmrSiPQ97Vx8/3e1d/MC0GD7r0tEQeJ0LGnkvhoylZYacjloHz0k9L2dMY7Nn/k05A5UPAQ72WhNUECnuo7NAkDGuqOM57BdmHn21tTpoJKKx0xBN+MXwqK5IPx1Dt1oJSLt9rPaOhcyXFBt6XyocW7LDvPnuekSiTUhxA3cy6ytqM9MVlHDX10otw2ZljYrWcr/XVOu5XsFfVKgK+Ma1mq3xTlmW//MIMXzW1up3pFXXdZ7Uen1FUkM63ySp2ccvSvzrpnfGYr9wOmUzClu6b+hk62Wr6NtioaGWtM7B2tY5WNUmGK10jKK60Lot2Ok1l/bMd/XBv45lJbWu4hdn8XPtH+k3C3E=</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="Utils" full_name="Utils"/>
+  <package name="global" full_name="global"/>
+  <namespace name="Koksosk" full_name="Koksosk"/>
+  <deprecated count="0"/>
+</project>
