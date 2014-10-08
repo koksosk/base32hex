@@ -72,7 +72,7 @@ class Base32Hex
     /**
      * Returns binary string representation for string
      *
-     * Example: Base32Hex::stringToBinary("Hello") will return "0100100001100101011011000110110001101111"
+     * Example: \Koksosk\Base32Hex::stringToBinary("Hello") will return "0100100001100101011011000110110001101111"
      *
      * @param string $inputString
      *
@@ -88,7 +88,7 @@ class Base32Hex
     /**
      * Returns string representation from binary string
      *
-     * Example: Base32Hex::binaryToString("0100100001100101011011000110110001101111") will return "Hello"
+     * Example: \Koksosk\Base32Hex::binaryToString("0100100001100101011011000110110001101111") will return "Hello"
      *
      * @param string $inputString
      *
@@ -104,7 +104,7 @@ class Base32Hex
     /**
      * Encode string into base32hex string
      *
-     * Example: Base32Hex::encode("Hello") will return "91IMOR3F"
+     * Example: \Koksosk\Base32Hex::encode("Hello") will return "91IMOR3F"
      *
      * @param string $inputString
      *
@@ -128,7 +128,7 @@ class Base32Hex
     /**
      * Decode base32hex string to string
      *
-     * Example: Base32Hex::decode("91IMOR3F") will return "Hello"
+     * Example: \Koksosk\Base32Hex::decode("91IMOR3F") will return "Hello"
      *
      * @param string $inputString
      *
