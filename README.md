@@ -20,10 +20,10 @@ Also these helper functions are included:
  * [Koksosk\Base32Hex::stringToBinary($string)](#string-to-binary)
  * [Koksosk\Base32Hex::binaryToString($string)](#binary-to-string)
 
-See [Usage][#usage] section below to see examples of usage.
+See [usage](#usage-examples) section below to see examples of usage.
 See the `docs/` folder for generated API documentation.
 
-## Important note
+## Important
 
 Please don't **CONFUSE** [base32hex][rfc] with [base32][rfcbase32] encoding, which looks is similar but it is different standard.
 
@@ -118,7 +118,7 @@ string(40) "Hello"
 
 Copyright &copy; 2014 Tomas Chvostek.
 
-Licensed under the MIT License.
+Licensed under the MIT License [see here](LICENSE).
 
 [phpdoc-md]: https://github.com/evert/phpdoc-md
 [packagist]: http://packagist.org/
