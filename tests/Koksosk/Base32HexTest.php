@@ -11,8 +11,8 @@ class Base32HexTest extends \PHPUnit_Framework_TestCase
      */
     public function testEncode()
     {
-        $s = Base32Hex::encode("Hello");
-        $this->assertSame('91IMOR3F', $s);
+        $str = Base32Hex::encode("Hello");
+        $this->assertSame("91IMOR3F", $str);
     }
 
     /**
@@ -20,7 +20,25 @@ class Base32HexTest extends \PHPUnit_Framework_TestCase
      */
     public function testDecode()
     {
-        $s = Base32Hex::decode("91IMOR3F");
-        $this->assertSame('Hello', $s);
+        $str = Base32Hex::decode("91IMOR3F");
+        $this->assertSame("Hello", $str);
+    }
+
+    /**
+     * @covers Koksosk\Base32Hex::stringToBinary
+     */
+    public function testStringToBinary()
+    {
+        $str = Base32Hex::stringToBinary("Hello");
+        $this->assertSame("0100100001100101011011000110110001101111", $str);
+    }
+
+    /**
+     * @covers Koksosk\Base32Hex::binaryToString
+     */
+    public function testBinaryToString()
+    {
+        $str = Base32Hex::binaryToString("0100100001100101011011000110110001101111");
+        $this->assertSame("Hello", $str);
     }
 }
