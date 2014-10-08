@@ -27,14 +27,14 @@ class Base32Hex
      *
      * @var int
      */
-    protected static $BASE32HEX_BITS = 5;
+    protected static $base32HexBits = 5;
 
     /**
      * Base32hex lookup alphabet [wiki link](http://en.wikipedia.org/wiki/Base32#base32hex)
      *
      * @var array
      */
-    protected static $BASE32HEX_ALPHABET = array(
+    protected static $base32HexAlphabet = array(
         "0" => "00000",
         "1" => "00001",
         "2" => "00010",
@@ -112,17 +112,17 @@ class Base32Hex
      */
     public static function encode($inputString)
     {
-        $s = self::stringToBinary($inputString);
+        $binStr = self::stringToBinary($inputString);
 
         // stuff string end with zero chars ('0') to be divisable by 5
-        while (strlen($s) % self::$BASE32HEX_BITS != 0) {
-            $s .= "0";
+        while (strlen($binStr) % self::$base32HexBits != 0) {
+            $binStr .= "0";
         }
 
-        $alpha = self::$BASE32HEX_ALPHABET;
+        $alpha = self::$base32HexAlphabet;
         return implode('', array_map(function ($str) use ($alpha) {
             return array_search($str, $alpha);
-        }, str_split($s, self::$BASE32HEX_BITS)));
+        }, str_split($binStr, self::$base32HexBits)));
     }
 
     /**
@@ -136,18 +136,18 @@ class Base32Hex
      */
     public static function decode($inputString)
     {
-        $alpha = self::$BASE32HEX_ALPHABET;
-        $s = implode("", array_map(function ($key) use ($alpha) {
+        $alpha = self::$base32HexAlphabet;
+        $binStr = implode("", array_map(function ($key) use ($alpha) {
             return $alpha[$key];
         }, str_split($inputString)));
 
         // remove 'stuffed' zero chars ('0') from string end to be divisable by 8
-        while (strlen($s) % 8 != 0) {
-            $s = substr($s, 0, -1);
+        while (strlen($binStr) % 8 != 0) {
+            $binStr = substr($binStr, 0, -1);
         }
 
         return implode('', array_map(function ($str) {
             return chr(bindec($str));
-        }, str_split($s, 8)));
+        }, str_split($binStr, 8)));
     }
 }
